@@ -1,4 +1,4 @@
-# godot-FPS
+# godot4-FPS
 conversion to godot 4 of the fps controller made by Rayuse
 
 original controller:
