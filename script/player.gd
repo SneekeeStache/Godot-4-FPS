@@ -8,6 +8,7 @@ var gravity = -ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var guncast = $head/Camera3d/gun
 @onready var shotgunContainer=$head/Camera3d/shotgun
 @onready var variables=$variables
+@onready var weaponLabel=$ui/weaponLabel
 
 func _unhandled_input(event):
 	if event.is_action_pressed("fire"):
@@ -29,6 +30,7 @@ func _physics_process(delta):
 	applyFriction(direction,delta)
 	applyGravity(delta)
 	applyControllerRotation()
+	weaponChange()
 	match weapon:
 		1:
 			shootPistol()
@@ -111,13 +113,18 @@ func shootShotgun():
 		for shotguncast in shotgunContainer.get_children():
 			shotguncast.target_position.x = randf_range(variables.spreadShotgun,-variables.spreadShotgun)
 			shotguncast.target_position.y = randf_range(variables.spreadShotgun,-variables.spreadShotgun)
-			if shotguncast.is_is_colliding():
+			if shotguncast.is_colliding():
 				if shotguncast.get_collider().is_in_group("hostile"):
 					print("pew monstre")
-					
+				else:
+					print("pew pas monstre")
+			else:
+				print("pew dans le vide")
 
 func weaponChange():
 	if Input.is_action_just_pressed("weapon 1"):
 		weapon=1
+		weaponLabel.text="pistol"
 	elif Input.is_action_just_pressed("weapon 2"):
 		weapon=2
+		weaponLabel.text="shotgun"
