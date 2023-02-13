@@ -6,9 +6,12 @@ var gravity = -ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var head = %head
 @onready var guncast = $head/Camera3d/gun
-@onready var shotgunContainer=$head/Camera3d/shotgun
+@onready var shotgunContainer=%shotguncast
 @onready var variables=$variables
 @onready var weaponLabel=$ui/weaponLabel
+var weaponPath:String
+var currentWeaponPath
+var currentWeaponNode
 
 func _unhandled_input(event):
 	if event.is_action_pressed("fire"):
@@ -31,11 +34,8 @@ func _physics_process(delta):
 	applyGravity(delta)
 	applyControllerRotation()
 	weaponChange()
-	match weapon:
-		1:
-			shootPistol()
-		2:
-			shootShotgun()
+	print(currentWeaponPath)
+	currentWeaponNode.shoot()
 	head.rotation.x = clamp(head.rotation.x, deg_to_rad(-85),deg_to_rad(85))
 	jump()
 	move_and_slide()
@@ -47,6 +47,9 @@ func _physics_process(delta):
 		
 
 func _ready():
+	weaponPath=NodePath("variables")
+	currentWeaponPath=NodePath(weaponPath+"/"+String(variables.weapons[weapon]))
+	currentWeaponNode=get_node(currentWeaponPath)
 	randomize()
 	for shotguncast in shotgunContainer.get_children():
 			shotguncast.target_position.x = randf_range(variables.spreadShotgun,-variables.spreadShotgun)
@@ -98,33 +101,17 @@ func applyControllerRotation():
 		rotate_y(deg_to_rad(-axisVector.x) * variables.controllerSensitivity)
 		head.rotate_x(deg_to_rad(-axisVector.y) * variables.controllerSensitivity)
 
-func shootPistol():
-	if(Input.is_action_just_pressed("fire")):
-		if guncast.is_colliding():
-			var colliderCast=guncast.get_collider()
-			if(colliderCast.is_in_group("hostile")):
-				print("pew monstre")
-			else:
-				print("pew pas monstre")
-		else:
-			print("pew dans le vide")
-func shootShotgun():
-	if(Input.is_action_just_pressed("fire")):
-		for shotguncast in shotgunContainer.get_children():
-			shotguncast.target_position.x = randf_range(variables.spreadShotgun,-variables.spreadShotgun)
-			shotguncast.target_position.y = randf_range(variables.spreadShotgun,-variables.spreadShotgun)
-			if shotguncast.is_colliding():
-				if shotguncast.get_collider().is_in_group("hostile"):
-					print("pew monstre")
-				else:
-					print("pew pas monstre")
-			else:
-				print("pew dans le vide")
-
 func weaponChange():
 	if Input.is_action_just_pressed("weapon 1"):
 		weapon=1
 		weaponLabel.text="pistol"
+		currentWeaponPath=NodePath(weaponPath+"/"+String(variables.weapons[weapon]))
+		currentWeaponNode=get_node(currentWeaponPath)
+		
 	elif Input.is_action_just_pressed("weapon 2"):
 		weapon=2
 		weaponLabel.text="shotgun"
+		currentWeaponPath=NodePath(weaponPath+"/"+String(variables.weapons[weapon]))
+		currentWeaponNode=get_node(currentWeaponPath)
+		
+

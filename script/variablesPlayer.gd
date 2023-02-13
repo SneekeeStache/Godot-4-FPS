@@ -18,6 +18,9 @@ var recoilShotgun:float=10
 
 var mouseSensitivity:float = 0.1
 var controllerSensitivity:float= 3
+@export var weapons={
+
+}
 # Called when the node enters the scene tree for the first time.
 func _get(property):
 	if property == 'playerStats/maxSpeed': return maxSpeed
@@ -153,3 +156,5 @@ func _get_property_list() -> Array:
 		}
 	)
 	return props
+	
+	

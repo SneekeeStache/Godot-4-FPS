@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxp3m8klv5p77"]
+[gd_scene load_steps=7 format=3 uid="uid://bw1vn6smsemr2"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_rrli4"]
 [ext_resource type="Script" path="res://script/variablesPlayer.gd" id="2_d4py6"]
+[ext_resource type="Script" path="res://script/weapons/pistol.gd" id="3_oqgt6"]
+[ext_resource type="Script" path="res://script/weapons/shotgun.gd" id="4_um4c4"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jxpqt"]
 
@@ -14,10 +16,14 @@ script = ExtResource("1_rrli4")
 
 [node name="variables" type="Node3D" parent="."]
 script = ExtResource("2_d4py6")
+weapons = {
+1: NodePath("weapons/pistol"),
+2: NodePath("weapons/shotgun")
+}
 playerStats/maxSpeed = 12.0
 playerStats/acceleration = 60.0
 playerStats/friction = 50.0
-playerStats/airFriction = 8.0
+playerStats/airFriction = 10.0
 playerStats/jumpForce = 8.0
 playerStats/push = 1
 weaponStats/pistol/damage = 20.0
@@ -28,6 +34,14 @@ weaponStats/shotgun/spread = 10.0
 weaponStats/shotgun/recoil = 10.0
 mouseControle/mouseSensitivity = 0.1
 mouseControle/controllerSensitivity = 3.0
+
+[node name="weapons" type="Node3D" parent="variables"]
+
+[node name="pistol" type="Node3D" parent="variables/weapons"]
+script = ExtResource("3_oqgt6")
+
+[node name="shotgun" type="Node3D" parent="variables/weapons"]
+script = ExtResource("4_um4c4")
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_jxpqt")
@@ -42,33 +56,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.483296, 0)
 [node name="Camera3d" type="Camera3D" parent="head"]
 
 [node name="gun" type="RayCast3D" parent="head/Camera3d"]
+unique_name_in_owner = true
 target_position = Vector3(0, 0, -100)
 collision_mask = 7
 
-[node name="shotgun" type="Node3D" parent="head/Camera3d"]
+[node name="shotguncast" type="Node3D" parent="head/Camera3d"]
+unique_name_in_owner = true
 
-[node name="shotgunCast" type="RayCast3D" parent="head/Camera3d/shotgun"]
+[node name="shotgunCast" type="RayCast3D" parent="head/Camera3d/shotguncast"]
 target_position = Vector3(0, 0, -20)
 
-[node name="shotgunCast2" type="RayCast3D" parent="head/Camera3d/shotgun"]
+[node name="shotgunCast2" type="RayCast3D" parent="head/Camera3d/shotguncast"]
 target_position = Vector3(0, 0, -20)
 
-[node name="shotgunCast3" type="RayCast3D" parent="head/Camera3d/shotgun"]
+[node name="shotgunCast3" type="RayCast3D" parent="head/Camera3d/shotguncast"]
 target_position = Vector3(0, 0, -20)
 
-[node name="shotgunCast4" type="RayCast3D" parent="head/Camera3d/shotgun"]
+[node name="shotgunCast4" type="RayCast3D" parent="head/Camera3d/shotguncast"]
 target_position = Vector3(0, 0, -20)
 
-[node name="shotgunCast5" type="RayCast3D" parent="head/Camera3d/shotgun"]
+[node name="shotgunCast5" type="RayCast3D" parent="head/Camera3d/shotguncast"]
 target_position = Vector3(0, 0, -20)
 
-[node name="shotgunCast6" type="RayCast3D" parent="head/Camera3d/shotgun"]
+[node name="shotgunCast6" type="RayCast3D" parent="head/Camera3d/shotguncast"]
 target_position = Vector3(0, 0, -20)
 
-[node name="shotgunCast7" type="RayCast3D" parent="head/Camera3d/shotgun"]
+[node name="shotgunCast7" type="RayCast3D" parent="head/Camera3d/shotguncast"]
 target_position = Vector3(0, 0, -20)
 
-[node name="shotgunCast8" type="RayCast3D" parent="head/Camera3d/shotgun"]
+[node name="shotgunCast8" type="RayCast3D" parent="head/Camera3d/shotguncast"]
 target_position = Vector3(0, 0, -20)
 
 [node name="ui" type="Control" parent="."]

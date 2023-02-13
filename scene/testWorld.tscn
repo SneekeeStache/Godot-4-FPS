@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bioht1vg1p588"]
 
-[ext_resource type="PackedScene" uid="uid://dxp3m8klv5p77" path="res://scene/prefabs/player.tscn" id="1_nrg20"]
+[ext_resource type="PackedScene" uid="uid://bw1vn6smsemr2" path="res://scene/prefabs/player.tscn" id="1_nrg20"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a37uu"]
 size = Vector3(10, 0.2, 10)
