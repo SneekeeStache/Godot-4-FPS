@@ -2,7 +2,7 @@ extends Node3D
 class_name pistol
 
 @onready var guncast=%gun
-
+@onready var playerAnim=%PlayerAnimator
 func debug():
 	print("pistol")
 
