@@ -34,7 +34,6 @@ func _physics_process(delta):
 	applyGravity(delta)
 	applyControllerRotation()
 	weaponChange()
-	print(currentWeaponPath)
 	currentWeaponNode.shoot()
 	head.rotation.x = clamp(head.rotation.x, deg_to_rad(-85),deg_to_rad(85))
 	jump()

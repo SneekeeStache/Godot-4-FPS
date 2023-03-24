@@ -581,9 +581,46 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("head/Camera3d/models/m1911/magazine:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("head/Camera3d/models/m1911/trigger:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("head/Camera3d/models/m1911/trigger:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.335906, 0, 0)]
+}
 
-[sub_resource type="Animation" id="Animation_jjts7"]
-resource_name = "m1911_shoot"
+[sub_resource type="Animation" id="Animation_yy2ht"]
+resource_name = "m1911_reload"
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -591,10 +628,10 @@ tracks/0/path = NodePath("head/Camera3d/models/m1911:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5, 0.6, 0.9, 1),
-"transitions": PackedFloat32Array(1, 0.5, 2, 0.5, 2.92817, 0.5),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector3(0.424, -0.252, -0.588), Vector3(0.424, -0.252, -0.588), Vector3(0.424, 0, -0.5), Vector3(0.424, 0, -0.48), Vector3(0.424, -0.252, -0.588), Vector3(0.424, -0.252, -0.588)]
+"values": []
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -603,10 +640,49 @@ tracks/1/path = NodePath("head/Camera3d/models/m1911:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5, 0.6, 0.9, 1),
-"transitions": PackedFloat32Array(1, 0.5, 2, 0.5, 3.13834, 0.5),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.610865, 0, 0), Vector3(0.698132, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("head/Camera3d/models/m1911/magazine:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_jjts7"]
+resource_name = "m1911_shoot"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head/Camera3d/models/m1911:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 1),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2),
+"update": 0,
+"values": [Vector3(0.424, -0.252, -0.588), Vector3(0.424, -0.2, -0.545), Vector3(0.424, -0.21, -0.545), Vector3(0.424, -0.252, -0.588)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("head/Camera3d/models/m1911:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 1),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0.0523599, 0), Vector3(0.202458, 0, 0), Vector3(0.202458, 0, 0), Vector3(0, 0.0523599, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -615,10 +691,10 @@ tracks/2/path = NodePath("head/Camera3d/models/m1911/slide:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4, 0.5, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 0.6, 1),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0.487), Vector3(0, 0, 0.487), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.379), Vector3(0, 0, 0.379), Vector3(0, 0, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -627,26 +703,61 @@ tracks/3/path = NodePath("head/Camera3d/models/m1911/slide:rotation")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4, 0.5, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-0.0226893, 0, 0), Vector3(-0.0226893, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+"values": []
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/path = NodePath("head/Camera3d/models/m1911/hammer:rotation")
-tracks/4/interp = 2
+tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.2, 0.4, 0.6),
+"times": PackedFloat32Array(0, 0.2, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.174533, 0, 0), Vector3(0.649262, 0, 0), Vector3(0.649262, 0, 0), Vector3(-0.174533, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("head/Camera3d/models/m1911/trigger:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.607375, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, -0.0969396, 0.245907), Vector3(0, 0, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_yy2ht"]
-resource_name = "m1911_reload"
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("head/Camera3d/models/m1911/trigger:rotation")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.335906, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("variables/weapons/pistol")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"bulletshot"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_olgmc"]
 _data = {
@@ -675,6 +786,7 @@ playerStats/push = 1
 weaponStats/pistol/damage = 20.0
 weaponStats/pistol/spread = 10.0
 weaponStats/pistol/recoil = 10.0
+weaponStats/pistol/shootingSpeed = 4.0
 weaponStats/shotgun/damage = 10.0
 weaponStats/shotgun/spread = 10.0
 weaponStats/shotgun/recoil = 10.0
@@ -685,6 +797,10 @@ mouseControle/controllerSensitivity = 3.0
 
 [node name="pistol" type="Node3D" parent="variables/weapons"]
 script = ExtResource("3_oqgt6")
+
+[node name="recoilTimer" type="Timer" parent="variables/weapons/pistol"]
+unique_name_in_owner = true
+wait_time = 0.5
 
 [node name="shotgun" type="Node3D" parent="variables/weapons"]
 script = ExtResource("4_um4c4")
@@ -755,7 +871,8 @@ skeleton = NodePath("")
 mesh = SubResource("ArrayMesh_trqj8")
 skeleton = NodePath("")
 
-[node name="Cube004" type="MeshInstance3D" parent="head/Camera3d/models/m1911"]
+[node name="trigger" type="MeshInstance3D" parent="head/Camera3d/models/m1911"]
+transform = Transform3D(1, 0, 0, 0, 0.944112, 0.329625, 0, -0.329625, 0.944112, 0, 0, 0)
 mesh = SubResource("ArrayMesh_lq7vh")
 skeleton = NodePath("")
 
@@ -793,6 +910,7 @@ mesh = SubResource("ArrayMesh_q5nlt")
 skeleton = NodePath("")
 
 [node name="magazine" type="MeshInstance3D" parent="head/Camera3d/models/m1911"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-07, 0, 2.98023e-07, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_q0wnh")
 skeleton = NodePath("")
 
@@ -825,7 +943,9 @@ horizontal_alignment = 1
 
 [node name="PlayerAnimator" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
-speed_scale = 2.5
+speed_scale = 3.0
 libraries = {
 "": SubResource("AnimationLibrary_olgmc")
 }
+
+[connection signal="timeout" from="variables/weapons/pistol/recoilTimer" to="variables/weapons/pistol" method="_on_recoil_timer_timeout"]

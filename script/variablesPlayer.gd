@@ -11,6 +11,7 @@ var push:int = 1
 var damagePistol:float=20
 var spreadPistol:float=10
 var recoilPistol:float=10
+var shootingSpeedPistol:float=3
 
 var damageShotgun:float=10
 var spreadShotgun:float=10
@@ -33,6 +34,7 @@ func _get(property):
 	if property == 'weaponStats/pistol/damage': return damagePistol
 	if property == 'weaponStats/pistol/spread': return spreadPistol
 	if property == 'weaponStats/pistol/recoil': return recoilPistol
+	if property == 'weaponStats/pistol/shootingSpeed': return shootingSpeedPistol
 	
 	if property == 'weaponStats/shotgun/damage': return damageShotgun
 	if property == 'weaponStats/shotgun/spread': return spreadShotgun
@@ -54,6 +56,7 @@ func _set(property,value):
 	if property == 'weaponStats/pistol/damage': damagePistol = value
 	if property == 'weaponStats/pistol/spread': spreadPistol = value
 	if property == 'weaponStats/pistol/recoil': recoilPistol = value
+	if property == 'weaponStats/pistol/shootingSpeed': shootingSpeedPistol = value
 	
 	if property == 'weaponStats/shotgun/damage': damageShotgun = value
 	if property == 'weaponStats/shotgun/spread': spreadShotgun = value
@@ -122,6 +125,12 @@ func _get_property_list() -> Array:
 	props.append(
 		{
 			'name': 'weaponStats/pistol/recoil',
+			'type': TYPE_FLOAT
+		}
+	)
+	props.append(
+		{
+			'name': 'weaponStats/pistol/shootingSpeed',
 			'type': TYPE_FLOAT
 		}
 	)
